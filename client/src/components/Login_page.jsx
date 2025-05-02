@@ -24,23 +24,28 @@ import { useLogin } from '../context/UserContext'
     return(
         <>
         <h1>Shop and Sell in One Place</h1>
-        <div>
-            <div className='box1'>
+        <div className='login-con'>
+            <div className='col1'>
                 <h2>Login</h2>
                 <form>
                     <input type="text" name="email" id="" placeholder='Email Address'/>
                     <input type="password" name="pw" id="" placeholder='Password'/>
+                    <input type="submit" value="Login" />
                 </form>
             </div>
-            <div className='box2'>
+            <div className='col2'>
                 <h2>Create Account</h2>
+                <p>Quick sign-up</p>
                 <form>
-                <input type="text" name="fname" id="" placeholder='First Name'/>
-                <input type="text" name="lname" id="" placeholder='Last Name'/>
+                <div className="names">
+                    <input type="text" name="fname" id="" placeholder='First Name'/>
+                    <input type="text" name="lname" id="" placeholder='Last Name'/>
+                </div>
                 <input type="text" name="email" id="" placeholder='Email Address'/>
                 <input type="password" name="pw" id="" placeholder='Password' />
+                <input type="submit" value="Sign-up" />
                 </form>
-                <p>Quick sign-up</p>
+                
 
             </div>
         </div>

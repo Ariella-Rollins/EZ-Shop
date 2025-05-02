@@ -25,7 +25,7 @@ function App() {
 
 
   return (
-    <>
+    <> 
       <Header/>
       <Routes>
         <Route path="/" element={<Home_page products={products}/>}/>

@@ -11,7 +11,7 @@ export const Home_page = ({products}) => {
         <div>
             {products.map((one, index)=> (
             <div className="product" key={index}>
-                <Link to = {`/product/${one._id}`} ><img src="/duck.jpg" height="150" width="200"></img></Link>
+                <Link to = {`/product/${one._id}`} ><img src="/duck.jpg" height="150" width="150"></img></Link>
                 <Link to = {`/product/${one._id}`}>
                     <h2>{one.name}</h2>
                     <p>${one.price}</p>

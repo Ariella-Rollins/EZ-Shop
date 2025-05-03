@@ -62,18 +62,66 @@ button {
   background-color: white;
 }
 
+.cmd-btns {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  height: 40px;
+}
+
+
+.btn3 {
+  border-radius: 10px;
+  display: inline-block;
+  width: 60px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 10pt;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 2px 2px 1px rgb(0, 0, 0, .4);
+  height: 25px;
+}
 
 .view {
-  background-color: rgb(176, 176, 176);
-  border-radius: 10px;
-  border: 2px solid grey;
-  display: inline-block;
-  width: 100px;
+  background-color: rgb(157, 237, 255);
+  border: 2px solid rgb(102, 207, 231);
+  color: rgb(7, 104, 126);
+}
+
+.edit {
+  background-color: rgb(94, 247, 163);
+  border: 2px solid rgb(38, 205, 113);
+  color: rgb(10, 126, 62);
+}
+
+.delete {
+  background-color: rgb(247, 173, 173);
+  border: 2px solid rgb(238, 110, 110);
+  color: rgb(152, 35, 35);
 }
 
 .view:hover {
-  background-color: rgb(207, 207, 207);
-  border: 2px solid rgb(161, 161, 161);
+  background-color: rgb(194, 244, 255);
+  border: 2px solid rgb(132, 224, 245);
+  color: rgb(22, 166, 198);
+  margin-top: 2px;
+  box-shadow: none;
+}
+
+.edit:hover {
+  background-color: rgb(106, 255, 173);
+  border: 2px solid rgb(67, 229, 140);
+  color: rgb(27, 185, 98);
+  margin-top: 2px;
+  box-shadow: none;
+}
+
+.delete:hover {
+  background-color: rgb(255, 214, 214);
+  border: 2px solid rgb(255, 162, 162);
+  color: rgb(222, 84, 84);
+  margin-top: 2px;
+  box-shadow: none;
 }
 
 .home-con {
@@ -261,7 +309,7 @@ button {
 }
 
 .buy-btn:hover {
-  background-color: rgb(92, 92, 92);
+  background-color: rgb(119, 119, 119);
 }
 
 
@@ -297,6 +345,7 @@ button {
 .inputs {
   display: flex;
   gap: 20px;
+  font-family: 'Arial'
 }
 
 .input1,
@@ -323,6 +372,8 @@ button {
 .input1>textarea {
   height: 60px;
   width: 200px;
+  padding-top: 3px;
+  font-family: 'Arial'
 }
 
 
@@ -337,4 +388,11 @@ button {
 .add-product:hover {
   background-color: rgb(122, 122, 122);
   border: 2px solid rgb(53, 53, 53);
+}
+
+
+.errors {
+  background-color: pink;
+  border: 1px, solid rgb(255, 66, 66);
+  padding: 5px 10px;
 }

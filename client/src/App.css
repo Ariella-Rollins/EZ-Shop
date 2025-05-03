@@ -2,15 +2,52 @@
   max-width: 1280px;
   margin: 0 auto;
   text-align: center;
+  background-color: rgb(176, 176, 176);
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
 }
 
 .header {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  gap: 50px;
   height: 80px;
   background-color: grey;
+}
+
+.logo a {
+  color: white;
+}
+
+.logo,
+.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.links a {
+  text-decoration: none;
+  color: rgb(47, 47, 47);
+  padding: 2px 7px;
+  margin: 5px;
+  background-color: rgb(186, 186, 186);
+  border: 2px solid rgb(48, 48, 48);
+  border-radius: 5px;
+}
+
+.links a:hover {
+  color: rgb(75, 75, 75);
+  background-color: rgb(233, 233, 233);
+  border: 2px solid rgb(75, 75, 75);
 }
 
 .product {
@@ -18,9 +55,39 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border: 2px solid white;
-  padding: 20px;
+  gap: 30px;
+  padding: 30px;
   margin: 20px;
+  width: 500px;
+  background-color: white;
+}
+
+
+.view {
+  background-color: rgb(176, 176, 176);
+  border-radius: 10px;
+  border: 2px solid grey;
+  display: inline-block;
+  width: 100px;
+}
+
+.view:hover {
+  background-color: rgb(207, 207, 207);
+  border: 2px solid rgb(161, 161, 161);
+}
+
+.home-con {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.filter {
+  width: 90%;
+  display: flex;
+  justify-content: end;
+  gap: 10px;
 }
 
 .con {
@@ -37,7 +104,7 @@
   align-items: start;
   justify-content: center;
   padding: 20px;
-  border: 2px white solid;
+  border: 2px rgb(0, 0, 0) solid;
 }
 
 .login-con {
@@ -55,8 +122,9 @@
 .col2 {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
   padding: 30px;
+  background-color: rgb(217, 217, 217);
   border: 2px solid white;
 }
 
@@ -69,16 +137,137 @@
 
 
 .product-con {
+  position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   gap: 50px;
+  padding: 100px;
+}
+
+.product-con img {
+  margin-top: 10px;
+}
+
+.product-con button {
+  width: 200px;
+  margin: 20px 0px;
 }
 
 .info {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 500px;
+  background-color: white;
+  padding: 20px;
+}
+
+.line {
+  display: flex;
+  width: 100%;
+  margin-left: 100px;
+}
+
+.line>p {
+  margin-left: 100px;
+}
+
+.info a {
+  text-decoration: underline;
+}
+
+.info a:hover {
+  color: rgb(101, 101, 101);
+}
+
+.info>* {
+  margin: 0px;
+}
+
+
+.popup {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  background-color: rgb(211, 211, 211);
+  padding: 50px;
+  border-radius: 10px;
+  border: 2px solid rgb(62, 62, 62);
+  /* z-index: -1; */
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(67, 57, 88, 0.5);
+  /* semi-transparent blue */
+  z-index: 5;
+
+}
+
+.show-popup {
+  z-index: 1
+}
+
+.popup form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+  gap: 20px;
+}
+
+.btns>input,
+.btns>button {
+  width: 100px;
+  border: 2px solid grey;
+  border-radius: 5px;
+}
+
+.btns>input {
+  color: white;
+  background-color: rgb(63, 63, 63);
+  border: 2px solid grey;
+}
+
+.btns>input:hover {
+  background-color: rgb(102, 102, 102);
+
+}
+
+.btns>button:hover {
+  background-color: rgb(154, 154, 154);
+
+}
+
+.buy-btn {
+  color: white;
+  background-color: rgb(63, 63, 63);
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.buy-btn:hover {
+  background-color: rgb(92, 92, 92);
+}
+
+
+.bold {
+  font-size: 12pt;
+  font-weight: bold;
 }
 
 
@@ -90,7 +279,6 @@
 }
 
 .create-con {
-  border: 2px solid white;
   display: flex;
   justify-content: center;
 }
@@ -98,8 +286,55 @@
 .create-con form {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
   gap: 20px;
-  padding: 20px;
+  padding: 0px 20px 20px 20px;
+  margin-top: 50px;
   border: 2px solid white;
+  background-color: rgb(217, 217, 217);
+}
+
+.inputs {
+  display: flex;
+  gap: 20px;
+}
+
+.input1,
+.input2 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input1>*,
+.input2>* {
+  height: 20px;
+  width: 200px;
+  padding: 0px 5px;
+  margin: 0px;
+  border: 1px solid grey;
+}
+
+.input2>select {
+  height: 21px;
+  width: 200px;
+}
+
+.input1>textarea {
+  height: 60px;
+  width: 200px;
+}
+
+
+.add-product {
+  background-color: rgb(94, 94, 94);
+  color: white;
+  border: 2px solid black;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+.add-product:hover {
+  background-color: rgb(122, 122, 122);
+  border: 2px solid rgb(53, 53, 53);
 }

@@ -35,7 +35,6 @@ import { useLogin } from '../context/UserContext'
             </div>
             <div className='col2'>
                 <h2>Create Account</h2>
-                <p>Quick sign-up</p>
                 <form>
                 <div className="names">
                     <input type="text" name="fname" id="" placeholder='First Name'/>

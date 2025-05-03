@@ -24,23 +24,24 @@ export const Store_page = ({users, products}) => {
             <div>
                 <div className="title">
                     <h1>{user.name}'s Store</h1>
-                    <Link to={`/product/new`}>Add product</Link>
+                    <Link to={`/product/new`} className="add-product">Add product</Link>
                 </div>
+                <div className="home-con">
                 {!userProducts? <p>None yet</p>:
                 userProducts.map((one, index)=> (
                     <div className="product" key={index}>
-                        <Link to = {`/product/${one._id}`} ><img src="/duck.jpg" height="150" width="200"></img></Link>
-                        <Link to = {`/product/${one._id}`}>
+                        <Link to = {`/product/${one._id}`} ><img src="/duck.jpg" height="150" width="150"></img></Link>
+                        <div>
                             <h2>{one.name}</h2>
                             <p>${one.price}</p>
-                            <p>Color: {one.color}</p>
-                            <p>Size: {one.size}</p>
-                            <button>View</button>
-                    </Link>
+                            <Link to = {`/product/${one._id}`} className='view'>View</Link>
+                        </div>
                     </div>
                 ))}
+                </div>
             </div>
             }
+            
         </div>
     )
 

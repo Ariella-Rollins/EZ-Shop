@@ -1,9 +1,24 @@
 import { useEffect} from 'react'
-import { Link } from 'react-router-dom'
-// import { getAllQuizzes } from '../services/quiz.service'
+import { Link, useNavigate } from 'react-router-dom'
+import { getAllProducts } from '../services/product.service'
 
 
-export const Home_page = ({products}) => {
+export const Home_page = ({products, setProducts}) => {
+    const navigate = useNavigate()
+
+
+    // useEffect(()=> {
+    //         const fetchProducts = async()=> {
+    //             try {
+    //                 const all = await getAllProducts()
+    //                 setProducts(all)
+    //             }
+    //             catch (err) {
+    //             console.log("fetch err", err)
+    //             }  
+    //         }
+    //         fetchProducts()
+    //     }, [])
 
     return (
         <>
@@ -31,7 +46,9 @@ export const Home_page = ({products}) => {
                 <div>
                     <h2>{one.name}</h2>
                     <p>${one.price}</p>
-                    <Link to = {`/product/${one._id}`} className='view'>View</Link>
+                    <div className="cmd-btns">
+                        <button onClick={()=>{navigate(`/product/${one._id}`)}} className='btn3 view'>View</button>
+                    </div>
                 </div>
             </div>
             ))}

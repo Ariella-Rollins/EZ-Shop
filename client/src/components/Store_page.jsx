@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react"
-import {useParams, Link} from 'react-router-dom'
+import {useParams, Link, useNavigate} from 'react-router-dom'
 
 export const Store_page = ({users, products}) => {
     const {id} = useParams()
     const [user, setUser] = useState(null)
     const [userProducts, setUserProducts] = useState(null)
+    const navigate = useNavigate()
 
     useEffect(()=> {
         if (!user) {
@@ -34,7 +35,11 @@ export const Store_page = ({users, products}) => {
                         <div>
                             <h2>{one.name}</h2>
                             <p>${one.price}</p>
-                            <Link to = {`/product/${one._id}`} className='view'>View</Link>
+                            <div className="cmd-btns">
+                                <button onClick= {()=>{navigate(`/product/${one._id}`)}} className='btn3 view'>View</button>
+                                <button onClick= {()=>{navigate(`/product/edit/${one._id}`)}} className='btn3 edit'>Edit</button>
+                                <button onClick={()=> {deleteProduct(one._id)}} className='btn3 delete'>Delete</button>
+                            </div>
                         </div>
                     </div>
                 ))}

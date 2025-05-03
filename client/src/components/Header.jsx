@@ -1,10 +1,20 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useLogin } from '../context/userContext'
 
 
 export const Header = () => {
+    const navigate = useNavigate()
+    const { isLoggedIn, logout:userLogout, setLoggedInData, loggedInData } = useLogin()
 
-
-    
+    const handleLogout = async () => {
+        try{
+            await logout() //logout server side by clearing cookie/jwt
+            userLogout()    //logout client side by toggling boolean
+            navigate('/login')
+        } catch( error ){
+            //  console.error('Logout Failed:', error) 
+            }
+    }
 
     return (
         <div className='header'>
@@ -13,8 +23,13 @@ export const Header = () => {
                 <Link to={`/`}><h1>EZ-Shop</h1></Link>
             </div>
             <div className="links">
+                {isLoggedIn&&
+                <Link to={`/profile/${loggedInData._id}`}>Welcome {loggedInData.name}</Link>}
                 <Link to={`/`}>Home</Link>
+                {isLoggedIn?
+                <button onClick={handleLogout}>Logout</button>:
                 <Link to={`/login`}>Login</Link>
+                }
             </div>
         </div>
     )

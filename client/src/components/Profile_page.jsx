@@ -17,11 +17,11 @@ export const Profile_page = ({users, products}) => {
             console.log("user", user)
             console.log("products", products)
             const userProducts = []
-            products.map((one)=> {
-                if (user.purchases.includes(one._id)) {
-                    userProducts.push(one)
-                }
-                })
+            // products.map((one)=> {
+            //     if (user.purchases.includes(one._id)) {
+            //         userProducts.push(one)
+            //     }
+            //     })
             console.log(userProducts)
             setPurchases(userProducts)
         }

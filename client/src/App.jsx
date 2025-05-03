@@ -12,17 +12,24 @@ import './App.css'
 
 function App() {
   const [products, setProducts] = useState([
-    {name:"Cool Shirt", price: 12, color:"brown", size:"small", _id:"123", creator_id: "12", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."},
-    {name:"Pink Shirt", price: 12, color:"pink", size:"small", _id:"1234", creator_id: "12", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."},
-    {name:"Emo Shirt", price: 12, color:"black", size:"small", _id:"12345", creator_id: "12", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."},
-    {name:"Foo Foo food", price: 10, color: "tan", size: "medium", _id:"456", creator_id: "11", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."},
-    {name:"Ducky food", price: 23, color: "tan", size: "medium", _id:"4567", creator_id: "11", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."},
-    {name:"Chicken food", price: 13, color: "tan", size: "medium", _id:"45678", creator_id: "11", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."}
+    {name:"Cool Shirt", price: 12, color:"brown", size:"small", _id:"123", creator_id: "12", category: "clothes", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."},
+    {name:"Pink Shirt", price: 12, color:"pink", size:"small", _id:"1234", creator_id: "12", category: "clothes", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."},
+    {name:"Emo Shirt", price: 12, color:"black", size:"small", _id:"12345", creator_id: "12", category: "clothes", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."},
+    {name:"Foo Foo food", price: 10, color: "tan", size: "medium", _id:"456", creator_id: "11", category: "clothes", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."},
+    {name:"Ducky food", price: 23, color: "tan", size: "medium", _id:"4567", creator_id: "11", category: "clothes", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."},
+    {name:"Chicken food", price: 13, color: "tan", size: "medium", _id:"45678", creator_id: "11", category: "clothes", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."}
   ])
-  const [users, setusers] = useState([{name: "john", _id: 12, purchases: ["45678", "1234"]}, {name: "jane", _id: 11} ])
+  const [users, setusers] = useState([
+    {name: "john", _id: 12, purchases: [{id: "45678", quantity: 3, date: "5/2/25"}, {id: "1234", quantity: 1, date:"5/1/25"}], sales:[{id:"123", quantity:1, date:"5/2/25"}]},
+    {name: "jane", _id: 11, purchases: [{id: "45678", quantity: 3, date: "5/2/25"}, {id: "1234", quantity: 1, date:"5/1/25"}], sales:[{id:"123", quantity:1, date:"5/2/25"}] } ])
   const [userData, setuserData] = useState({})
   const [userProducts, setUserProducts] = useState({})
 
+
+  // Stretch goals:
+  // Add a filter by category
+  // Add a photo upload ( up to 2 photos)
+  // When you hover over the image, the src changes to the 2nd image
 
   return (
     <> 

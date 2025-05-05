@@ -3,7 +3,7 @@ import cors from "cors";
 import { config } from "dotenv"; // instead of importing all of dotenv
 import { dbConnect } from "./config/mongoose.config.js";
 import userRouter from "./routes/user.routes.js"
-import quizRouter from "./routes/product.routes.js";
+import productRouter from "./routes/product.routes.js";
 import cookieParser from "cookie-parser";
 
 const app = express();

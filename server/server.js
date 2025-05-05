@@ -12,7 +12,7 @@ app.use(express.json(), cors({ origin: 'http://localhost:5173', credentials: tru
 app.use(express.json())
 app.use(cookieParser())
 app.use("/v1/user", userRouter);
-app.use("/v1/product", quizRouter);
+app.use("/v1/product",productRouter);
 
 config(); // instead of dotenv.config
 const PORT = process.env.PORT;

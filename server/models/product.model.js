@@ -4,7 +4,7 @@ import mongoose from "mongoose"
 const productSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: [true, 'All fields required'],
+        required: [true, 'Product nameis  required!'],
         minLength: [5, `product name must be at least 5 characters!`],
         maxLength: [30, `product name cannnot exceed 30 characters!`],
     },
@@ -12,9 +12,15 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: [false]
     },
-    pic:{
+    pic1:{
         type: String,
-        required: [false]
+        required: [false],
+        maxLength: [2048,  `Max length for url cannnot exceed 2048 characters!`],
+    },
+    pic2:{
+        type: String,
+        required: [false],
+        maxLength: [2048, `Max length for url cannnot exceed 2048 characters!`],
     },
     description: {
         type: String,
@@ -25,34 +31,40 @@ const productSchema = new mongoose.Schema({
       price: {
         type: Number,
         required: [true, 'Please type number for price.'],
+        min: [1, 'Price must be at least $1'],
+      },
+      stock: {
+        type: Number,
+        required: [true, 'Please type number of your stock.'],
+        min: [1, 'Stock must be at least 0'],
       },
       
-      category: {
+     category: {
         type: String,
-        required: [true,'Please select Category.'],
-        default:'Electronics',
-        enum:['Electronics','Fashion','Home and Kitchen','Beauty and Personal Care',
-            'Sports and Outdoors','Toys and Games','Books and Media','Health and Wellness','Baby and Kids','Pet Care']
+        required: [true,'Please select a Category.'],
+        default:'clothes',
+        enum:['clothes','accessories','beauty&health', 'home', 'kitchen', 'electronics', 
+        'toys&games','books&media','pets', 'outdoors', 'others'],
       },
-    //   subCategory: {
-    //     type: String,
-    //     required: true,
-    //   },
-      sizes: {
+        color: {
+        type: String,
+        required: [true, "Please select a color"],
+        enum:['white','black','grey','red','orange', 'yellow', 'green', 'blue', 'purple', 'pink', 'brown', 'tan', 'multi-color'],
+      },
+     size: {
         type:String,
-            required: [true,'Please select size from combobox.'],
+            required: [true,'Please select size'],
             default:'Small',
-            enum:['Small','Medium','Large','XL','XLL']
+            enum:['extra-small', 'small','medium','large','extra-large'],
       },
-      bestSeller: {
-        type: Boolean,
-      },
-      date: {
-        type: Number,
-        required: true,
-      },
-    
-    
+      purchases: {
+        type: Array,
+        required: [false],
+    },
+    sales: {
+        type: Array,
+        required: [false],
+    },
 }, { timestamps: true });
 
 

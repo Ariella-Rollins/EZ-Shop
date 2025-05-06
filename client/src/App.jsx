@@ -24,6 +24,13 @@ function App() {
   // Add a photo upload (up to 2 photos)
   // deploy app
 
+  //intergration
+  // add:
+  // userRouter.route('/:id')
+  //     .patch(updateHistory)
+  //     .delete (deleteUser)
+  //     .put(updateUser)
+
 
   return (
     <> 

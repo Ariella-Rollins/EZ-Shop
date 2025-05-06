@@ -3,9 +3,13 @@ import bcrypt from 'bcryptjs'
 
 // Define a schema for our User model
 const userSchema = new mongoose.Schema({
-    name: {
+    fname: {
         type: String,
-        required: [true, 'Name is required'],
+        required: [true, ' First Name is required'],
+    },
+    lname: {
+        type: String,
+        required: [true, 'Last Name is required'],
     },
     email: {
         type: String,
@@ -18,11 +22,6 @@ const userSchema = new mongoose.Schema({
         required: [true, 'Password is required'],
         minLength: [8, `Passwords must be at least eight characters long!`]
     },
-    bio: {
-        type: String,
-        required: [false],
-        maxLength: [150, `Bio cannot exceed 150 charactors.`]
-    }
 }, { timestamps: true });
 
 // ------------------------------

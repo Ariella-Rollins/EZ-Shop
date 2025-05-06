@@ -11,8 +11,8 @@ export const getProducts = async(req, res) => {
 //create product
 export const createProduct = async(req, res) => {
     try {
-        const Product = await Product.create(req.body)
-        res.status(201).json( Product )
+        const newProduct = await Product.create(req.body)
+        res.status(201).json( newProduct )
     } catch (err){ 
         if (err.name === 'ValidationError') {
             // Sends back errors in a flat object
@@ -64,3 +64,30 @@ export const deleteProduct = async (req, res) => {
         res.status(400).json({ message: error.message })
     }
 }
+// filter or search products by category
+export async function getProductsByCategory(req, res) {
+    try {
+        const all = await Product.find({ category: { $eq: req.params.category } });
+        res.status(200).json(all);
+    } catch (err) {
+        console.log("not a category");
+        return res.status(400).json(err);
+    }
+} 
+// update stock handler
+export const updateStock = async (req, res) => {
+    try {
+        const updatedUser = await Product.findByIdAndUpdate(
+        req.params.id,
+        // this resets the attribute purchases. For testing.
+        { $set: { stock: req.body.stock } }
+        );
+        console.log("changed stock")
+    }
+        catch (err){ 
+            console.log("error", err)
+            return res.status(500).json(err);
+            }
+}
+
+

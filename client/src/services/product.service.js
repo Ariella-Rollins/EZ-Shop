@@ -17,8 +17,19 @@ export const createProduct = async (req, res) => {
 export const getAllProducts = async () => {
     try {
         const RES = await PRODUCT_INSTANCE.get( '/all' )
+        console.log("RES", RES.data)
         return RES.data
     } catch( error ){ throw error }
+}
+
+export async function getProductsByCategory(req, res) {
+    try {
+        const RES = await PRODUCT_INSTANCE.get(`/category/${req}`);
+        return RES.data;
+    } 
+    catch (error) {
+    throw error;
+    }
 }
 
 export const updateProduct = async (req, res) => {
@@ -31,6 +42,23 @@ export const updateProduct = async (req, res) => {
         return RES.data}
         catch( error ){ throw error }
 }
+
+export const updateStock = async (req, res) => {
+    console.log("req.id", req.id)
+    const options = {
+        new: true,
+        runValidators: true,
+    };
+    try {
+        const RES = await PRODUCT_INSTANCE.patch( `/${req.id}`, req)
+        return RES.data
+        }
+        catch( error ){ 
+            console.log("error", error)
+            throw error }
+}
+
+
 
 export const deleteProduct = async (id) => {
     try {

@@ -35,19 +35,37 @@ button {
 }
 
 .links a {
-  text-decoration: none;
-  color: rgb(47, 47, 47);
   padding: 2px 7px;
   margin: 5px;
-  background-color: rgb(186, 186, 186);
-  border: 2px solid rgb(48, 48, 48);
   border-radius: 5px;
 }
 
-.links a:hover {
-  color: rgb(75, 75, 75);
-  background-color: rgb(233, 233, 233);
-  border: 2px solid rgb(75, 75, 75);
+.profile-link {
+  text-decoration: underline;
+}
+
+.home-btn {
+  background-color: rgb(142, 233, 253);
+  border: 2px solid rgb(56, 166, 190);
+  color: rgb(0, 76, 93);
+}
+
+.home-btn:hover {
+  background-color: rgb(187, 243, 255);
+  color: rgb(7, 137, 167);
+}
+
+.login-btn {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: rgb(101, 249, 167);
+  border: 2px solid rgb(27, 196, 103);
+  color: rgb(2, 98, 45);
+}
+
+.login-btn:hover {
+  background-color: rgb(158, 255, 202);
+  color: rgb(21, 143, 76);
 }
 
 .product {
@@ -145,26 +163,126 @@ button {
   gap: 30px;
 }
 
+.profile-con {
+  width: 100vw;
+  height: 100vh;
+}
+
+.row1 {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px;
+}
+
+.row1>* {
+  margin-top: 10px;
+}
+
+.date-purchased {
+  margin-bottom: 0px;
+}
+
+.purchase {
+  display: flex;
+  border: 2px solid grey;
+  padding: 10px;
+  margin: 10px;
+  height: fit-content;
+  width: 500px;
+  gap: 20px;
+}
+
+.infos {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 150px;
+}
+
+#wide {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .box1,
 .box2 {
   display: flex;
   flex-direction: column;
-  align-items: start;
   justify-content: center;
   padding: 20px;
-  border: 2px rgb(0, 0, 0) solid;
+  background-color: rgb(217, 217, 217);
+  border: 2px solid white;
+}
+
+.box1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 550px;
+}
+
+.box2 {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.one,
+.two {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.one h1 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.btn-space {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  height: 48px;
+
 }
 
 .login-con {
   display: flex;
   justify-content: center;
-  gap: 100px;
+  gap: 50px;
 }
 
-.names {
-  display: flex;
-  gap: 20px;
+.login-con input {
+  border-radius: 5px;
+  border: 1.5px solid grey;
+  padding: 2px 5px;
 }
+
+.login-con input[type=submit] {
+  width: 80px;
+  margin-top: 20px;
+  background-color: rgb(148, 220, 238);
+  border: 1.5px solid rgb(69, 135, 144);
+  color: rgb(33, 33, 33);
+  border-radius: 5px;
+}
+
+.login-con input[type=submit]:hover {
+  background-color: rgb(198, 244, 255);
+  border: 1.5px solid rgb(96, 165, 174);
+  color: rgb(33, 33, 33);
+}
+
+
 
 .col1,
 .col2 {
@@ -174,13 +292,53 @@ button {
   padding: 30px;
   background-color: rgb(217, 217, 217);
   border: 2px solid white;
+  width: 300px;
+  height: fit-content;
+}
+
+.col1 h2,
+.col2 h2 {
+  margin-top: 0;
 }
 
 .col1 form,
 .col2 form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  align-items: center;
+  gap: 10px;
+}
+
+.login-btn-space {
+  display: flex;
+  width: 90%;
+  justify-content: end;
+}
+
+.login-form {
+  width: 300px;
+}
+
+.names {
+  display: flex;
+  gap: 10px;
+  width: 250px;
+  margin: 0px;
+}
+
+.others {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 250px;
+}
+
+.names input {
+  width: 114px;
+}
+
+.others input {
+  width: 250px;
 }
 
 
@@ -190,35 +348,31 @@ button {
   justify-content: center;
   align-items: start;
   gap: 50px;
-  padding: 100px;
+  padding: 50px;
 }
 
 .product-con img {
-  margin-top: 10px;
+  width: 400px;
 }
 
 .product-con button {
   width: 200px;
-  margin: 20px 0px;
+}
+
+.line {
+  display: flex;
+  gap: 20px;
+  width: auto;
 }
 
 .info {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 500px;
+  width: 350px;
+  gap: 20px;
   background-color: white;
-  padding: 20px;
-}
-
-.line {
-  display: flex;
-  width: 100%;
-  margin-left: 100px;
-}
-
-.line>p {
-  margin-left: 100px;
+  padding: 20px 50px;
 }
 
 .info a {
@@ -300,16 +454,17 @@ button {
 
 }
 
-.buy-btn {
+.buy-btn,
+.out-of-stock {
   color: white;
-  background-color: rgb(63, 63, 63);
-  border: 2px solid rgb(0, 0, 0);
+  background-color: rgb(105, 105, 105);
+  border: 2px solid rgb(49, 49, 49);
   border-radius: 5px;
   padding: 5px;
 }
 
 .buy-btn:hover {
-  background-color: rgb(119, 119, 119);
+  background-color: rgb(150, 150, 150);
 }
 
 
@@ -390,9 +545,25 @@ button {
   border: 2px solid rgb(53, 53, 53);
 }
 
+.form-btns {
+  display: flex;
+  gap: 50px;
+}
+
 
 .errors {
   background-color: pink;
   border: 1px, solid rgb(255, 66, 66);
   padding: 5px 10px;
+  margin: 0px 5px 10px 5px;
+  height: fit-content;
+}
+
+.errors-product {
+  background-color: pink;
+  border: 1px, solid rgb(255, 66, 66);
+  padding: 5px 10px;
+  margin: 0px 5px 10px 5px;
+  width: 185px;
+  height: fit-content;
 }

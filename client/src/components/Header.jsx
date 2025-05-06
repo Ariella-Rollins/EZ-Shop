@@ -1,5 +1,8 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { useLogin } from '../context/userContext'
+import { logout } from '../services/user.service'
+import { useEffect } from 'react'
+import { getUser } from '../services/user.service'
 
 
 export const Header = () => {
@@ -23,12 +26,12 @@ export const Header = () => {
                 <Link to={`/`}><h1>EZ-Shop</h1></Link>
             </div>
             <div className="links">
-                {isLoggedIn&&
-                <Link to={`/profile/${loggedInData._id}`}>Welcome {loggedInData.name}</Link>}
-                <Link to={`/`}>Home</Link>
-                {isLoggedIn?
-                <button onClick={handleLogout}>Logout</button>:
-                <Link to={`/login`}>Login</Link>
+                {isLoggedIn && loggedInData &&
+                <Link to={`/profile/${loggedInData._id}`} className='profile-link'>Welcome {loggedInData.fname}</Link>}
+                <Link to={`/`} className='home-btn'>Home</Link>
+                {isLoggedIn? loggedInData &&
+                <button onClick={handleLogout} className='login-btn'>Logout</button>:
+                <Link to={`/login`} className='login-btn'>Login</Link>
                 }
             </div>
         </div>

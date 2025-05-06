@@ -8,8 +8,10 @@ const USER_INSTANCE = axios.create({
 export const register = async data => {
     try {
         const RES = await USER_INSTANCE.post('/', data )
+        console.log("RES", RES)
         return RES
     } catch( error ){
+        console.log("service error", error)
         throw error.response.data.errors }
 }
 
@@ -43,16 +45,19 @@ export const getAllUsers = async () => {
     } catch( error ){ throw error }
 }
 
-export const updateUserBio = async (req, res) => {
+export const updateUserHistory = async (req, res) => {
+    console.log("req", req)
     const options = {
         new: true,
         runValidators: true,
     };
     try {
-        const RES = await USER_INSTANCE.put( '/all', req )
+        const RES = await USER_INSTANCE.patch( `/${req.userId}`, {_id: req._id, quantity: req.quantity, date: req.date} )
+        console.log("success!", RES.data)
         return RES.data
     } 
     catch( error ){
+        console.log("error", error)
         throw error.response.data.errors}
 }
 

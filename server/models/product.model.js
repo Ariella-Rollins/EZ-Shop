@@ -4,9 +4,9 @@ import mongoose from "mongoose"
 const productSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: [true, 'Product nameis  required!'],
-        minLength: [5, `product name must be at least 5 characters!`],
-        maxLength: [30, `product name cannnot exceed 30 characters!`],
+        required: [true, 'Product name is  required!'],
+        minLength: [5, `Product name must be at least 5 characters!`],
+        maxLength: [30, `Product name cannnot exceed 30 characters!`],
     },
     creator_id: {
         type: String,

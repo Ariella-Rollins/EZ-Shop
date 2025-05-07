@@ -75,7 +75,7 @@ function handleChange(e){
                         <input type="number" name="quantity" min="1" max={product.stock} placeholder="1" value={quantity} onChange={handleChange} />
                         <div className="btns">
                             <input type="submit" value="Purchase" />
-                            <button onClick={()=>{ setPopup(false)}}>Cancel</button>
+                            <button type="button" onClick={()=>{ setPopup(false)}}>Cancel</button>
                         </div>
                         </form>
                         </>}
@@ -84,8 +84,8 @@ function handleChange(e){
                 </div>
                 )}
                 {
-                    !product.pic1? <img src={'/no-pic.jpg'} width="300"></img>:
-                    !product.pic2? <img src={`${product.pic1}`} width="300"></img>:
+                    !product.pic1? <img src={'/no-pic.jpg'} width="400"></img>:
+                    !product.pic2? <img src={`${product.pic1}`} width="400"></img>:
                     <ProductCarousel pic1={product.pic1} pic2 ={product.pic2}/>
                 }
             <div className="info">
@@ -93,7 +93,7 @@ function handleChange(e){
                 <p className="bold">${product.price}</p>
                 <p>{product.description}</p>
                 {    product.stock < 1 ?
-                    <button disabled className="out-of-stock buy-btn" >Out of stock</button>:
+                    <button disabled className="out-of-stock" >Out of stock</button>:
                     <button onClick={()=> {setPopup(true)}} className="buy-btn">Purchase</button>
                 }
                 <Link to={`/store/${product.creator_id}`}>Seller's Other Products</Link>

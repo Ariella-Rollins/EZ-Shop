@@ -19,22 +19,9 @@ function App() {
 
 
   // Stretch goals:
-  // fix user's own store products fetching. (doesn't always fetch)
   // Add a photo upload (up to 2 photos)
   // deploy app
 
-  //fix slugs on product page
-  // push carousel to main!
-  //
-
-  //intergration
-  // add:
-  // userRouter.route('/:id')
-  //     .patch(updateHistory)
-  //     .delete (deleteUser)
-  //     .put(updateUser)
-
-  // fix quiz validations (empty errors)
 
   return (
     <> 
@@ -43,7 +30,7 @@ function App() {
         <Route path="/" element={<Home_page products={products} setProducts={setProducts} users={users} setUsers={setUsers}/>}/>
         <Route path="/login" element={<Login_page/>}/>
         <Route path="/profile/:id" element={<Profile_page users={users} products={products}/>}/>
-        <Route path="/store/:id" element={<Store_page users={users} products={products} setProducts={setProducts}/>}/>
+        <Route path="/store/:id" element={<Store_page users={users} setUsers={setUsers} products={products} setProducts={setProducts}/>}/>
         <Route path="/product/new" element={<Add_product products={products} setProducts={setProducts}/>}/>
         <Route path="/product/:id" element={<Product_page products={products} users={users} setUsers={setUsers}/>}/>
         <Route path="/product/:id/edit" element={<Edit_product products={products} setProducts={setProducts}/>}/>

@@ -83,3 +83,26 @@ export const deleteUser = async (req, res) => {
         res.status(400).json({ message: error.message })
     }
 }
+// update history
+export const updateHistory = async(req, res) => {
+    const newPurchase = {_id: req.body._id, quantity: req.body.quantity, date: req.body.date}; 
+    try {
+        const updatedUser = await User.findByIdAndUpdate(
+        req.params.id,
+        // this resets the attribute purchases. For testing.
+        // { $set: { purchases: [] } },
+        //this adds to the array purchases:
+        { $push: { purchases: newPurchase } },
+        { new: true, runValidators: true }
+        );
+      if (!updatedUser) {
+        console.log("user not found")
+        return res.status(404).json({ error: 'User not found' });
+      }
+
+      return res.json(updatedUser);
+    } catch (error) {
+      console.error("controller error", error);
+      return res.status(500).json({ error: 'Server error' });
+    }
+}

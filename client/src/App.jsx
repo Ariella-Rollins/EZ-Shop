@@ -20,9 +20,19 @@ function App() {
 
   // Stretch goals:
   // fix user's own store products fetching. (doesn't always fetch)
-  // add carosel if theres 2 photos.
   // Add a photo upload (up to 2 photos)
   // deploy app
+
+  //fix slugs on product page
+  // push carousel to main!
+  //
+
+  //intergration
+  // add:
+  // userRouter.route('/:id')
+  //     .patch(updateHistory)
+  //     .delete (deleteUser)
+  //     .put(updateUser)
 
 
   return (

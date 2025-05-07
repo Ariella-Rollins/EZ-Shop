@@ -34,6 +34,7 @@ function App() {
   //     .delete (deleteUser)
   //     .put(updateUser)
 
+  // fix quiz validations (empty errors)
 
   return (
     <> 

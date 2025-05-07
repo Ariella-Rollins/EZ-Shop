@@ -26,20 +26,21 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true,
         minLength: [5, `Description must be at least 5 characters!`],
-        maxLength: [30, `Description cannnot exceed 30 characters!`],
+        maxLength: [100, `Description cannnot exceed 100 characters!`],
       },
       price: {
         type: Number,
         required: [true, 'Please put your price.'],
         min: [1, 'Price must be at least $1'],
+        max: [2000, 'Price cannot exceed $2,000'],
       },
       stock: {
         type: Number,
         required: [true, 'Please type number of your stock.'],
-        min: [1, 'Stock must be at least 0'],
+        min: [1, 'Stock must be at least 1'],
       },
       
-     category: {
+      category: {
         type: String,
         required: [true,'Please select a Category.'],
         default:'clothes',
@@ -51,7 +52,7 @@ const productSchema = new mongoose.Schema({
         required: [true, "Please select a color"],
         enum:['white','black','grey','red','orange', 'yellow', 'green', 'blue', 'purple', 'pink', 'brown', 'tan', 'multi-color'],
       },
-     size: {
+      size: {
         type:String,
             required: [true,'Please select size'],
             default:'Small',

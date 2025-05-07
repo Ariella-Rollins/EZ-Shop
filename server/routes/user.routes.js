@@ -1,6 +1,6 @@
 import { Router } from "express"
 import { protect } from "../middleware/authMiddleware.js"
-import { deleteUser, getUser, getUsers, loginUser, logOutUser, registerUser, updateUser,updateHistory } from "../controllers/user.controller.js"
+import { deleteUser, getUser, getUsers, loginUser, logOutUser, registerUser, updateUser, updateHistory } from "../controllers/user.controller.js"
 const userRouter = Router()
 
 //routes
@@ -17,10 +17,10 @@ userRouter.route('/:id')
     .delete (deleteUser)
     .put(updateUser)
 //GET → getUsers (protected by middleware protect): Retrieves users but only for authenticated requests.
-//userRouter.route('/')
-    //.get( protect, getUsers )
-    //.post( registerUser )
-//
+userRouter.route('/')
+    .get( protect, getUsers )
+    .post( registerUser )
+
 userRouter.route('/logins')
     .post (getUser)
 //Authenticates a user and starts a session or returns a token.

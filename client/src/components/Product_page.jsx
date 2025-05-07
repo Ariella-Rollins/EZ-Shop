@@ -26,8 +26,7 @@ async function purchaseProduct(e) {
     console.log("user id", loggedInData._id)
     const data ={userId: loggedInData._id, _id: id, quantity: e.target.quantity.value, date: new Date()}
     console.log("data", data)
-    updateUserHistory({userId: loggedInData._id, _id: id, quantity: e.target.quantity.value, date: new Date()})
-    // console.log("decrease", product.stock-1)
+    updateUserHistory(data)
     const newStock = product.stock-1
     updateStock({ id: id, stock: newStock})
     const fetchUsers = async()=> {

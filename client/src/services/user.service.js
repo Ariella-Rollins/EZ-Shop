@@ -46,12 +46,14 @@ export const getAllUsers = async () => {
 }
 
 export const updateUserHistory = async (req, res) => {
+    console.log("in update user history!")
     console.log("req", req)
     const options = {
         new: true,
         runValidators: true,
     };
     try {
+        console.log("url id:", req.userId)
         const RES = await USER_INSTANCE.patch( `/${req.userId}`, {_id: req._id, quantity: req.quantity, date: req.date} )
         console.log("success!", RES.data)
         return RES.data

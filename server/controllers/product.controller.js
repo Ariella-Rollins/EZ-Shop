@@ -77,7 +77,7 @@ export async function getProductsByCategory(req, res) {
 // update stock handler
 export const updateStock = async (req, res) => {
     try {
-        const updatedUser = await Product.findByIdAndUpdate(
+        const updatedProduct = await Product.findByIdAndUpdate(
         req.params.id,
         // this resets the attribute purchases. For testing.
         { $set: { stock: req.body.stock } }

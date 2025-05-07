@@ -61,7 +61,7 @@ export const updateUser = async (req, res) => {
     };
     try {
         const editedUser = await User.findByIdAndUpdate(
-            req.body._id,
+            req.params.id,
             req.body,
             options
         );
@@ -85,7 +85,9 @@ export const deleteUser = async (req, res) => {
 }
 //
 export const updateHistory = async(req, res) => {
-    const newPurchase = {_id: req.body._id, quantity: req.body.quantity, date: req.body.date}; 
+    const newPurchase = {_id: req.body._id, quantity: req.body.quantity, date: req.body.date};
+    console.log("new purchase in controller", newPurchase)
+    console.log("req.params.id", req.params.id)
     try {
         const updatedUser = await User.findByIdAndUpdate(
         req.params.id,
@@ -95,11 +97,12 @@ export const updateHistory = async(req, res) => {
         { $push: { purchases: newPurchase } },
         { new: true, runValidators: true }
         );
+        console.log("updateduser", updatedUser)
       if (!updatedUser) {
         console.log("user not found")
         return res.status(404).json({ error: 'User not found' });
       }
-
+      console.log("updated user", updatedUser)
       return res.json(updatedUser);
     } catch (error) {
       console.error("controller error", error);

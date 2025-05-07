@@ -27,8 +27,8 @@ export const Profile_page = ({users, products}) => {
     }, [user])
 
     useEffect(() => {
-        if (user) {
-            console.log("profile setting purchases");
+        if (user?.purchases) {
+            console.log("user.purchases", user.purchases)
             const enrichedPurchases = user.purchases.map(purchase => {
             const product = products.find(prod => prod._id === purchase._id);
             if (!product) return null; // Handle missing product gracefully
@@ -38,9 +38,9 @@ export const Profile_page = ({users, products}) => {
             date: purchase.date
             };
           }).filter(p => p !== null); // Remove nulls if any products are missing
-
+            console.log("setting purchases to:", enrichedPurchases)
             setPurchases(enrichedPurchases);
-        }
+            }
         }, [user, products]);
 
 

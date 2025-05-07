@@ -17,9 +17,9 @@ userRouter.route('/:id')
     .delete (deleteUser)
     .put(updateUser)
 //GET → getUsers (protected by middleware protect): Retrieves users but only for authenticated requests.
-userRouter.route('/')
-    .get( protect, getUsers )
-    .post( registerUser )
+//userRouter.route('/')
+    //.get( protect, getUsers )
+    //.post( registerUser )
 //
 userRouter.route('/logins')
     .post (getUser)

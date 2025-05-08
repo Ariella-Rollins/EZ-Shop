@@ -51,6 +51,8 @@ export const updateStock = async (req, res) => {
     };
     try {
         const RES = await PRODUCT_INSTANCE.patch( `/${req.id}`, req)
+        console.log("res data", RES.data)
+        // make sure controller returns something or else this method will wait forever for RES.data
         return RES.data
         }
         catch( error ){ 

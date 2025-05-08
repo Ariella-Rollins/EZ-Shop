@@ -10,6 +10,17 @@ export const Store_page = ({users, setUsers, products, setProducts}) => {
     const [userProducts, setUserProducts] = useState(null)
     const navigate = useNavigate()
     const { isLoggedIn, logout:userLogout, setLoggedInData, loggedInData } = useLogin()
+
+    const fetchProducts = async()=> {
+        try {
+            const all = await getAllProducts()
+            console.log("all products", all)
+            setProducts(all)
+        }
+        catch (err) {
+        console.log("fetch product err", err)
+        }  
+    }
     
     // fetch users and products if there aren't any.
     useEffect(()=> {
@@ -28,16 +39,6 @@ export const Store_page = ({users, setUsers, products, setProducts}) => {
         fetchUsers() 
         }
         if (!products || products?.length == 0) {
-            const fetchProducts = async()=> {
-                try {
-                    const all = await getAllProducts()
-                    console.log("all products", all)
-                    setProducts(all)
-                }
-                catch (err) {
-                console.log("fetch product err", err)
-                }  
-            }
             fetchProducts()
         }
     }, [users])

@@ -83,6 +83,7 @@ export const updateStock = async (req, res) => {
         { $set: { stock: req.body.stock } }
         );
         console.log("changed stock")
+        res.status(200).json(updatedProduct);
     }
         catch (err){ 
             console.log("error", err)

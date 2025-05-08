@@ -27,9 +27,11 @@ async function purchaseProduct(e) {
     console.log("user id", loggedInData._id)
     const data ={userId: loggedInData._id, _id: id, quantity: e.target.quantity.value, date: new Date()}
     console.log("data", data)
-    updateUserHistory(data)
+    await updateUserHistory(data)
+    console.log("updated user history")
     const newStock = product.stock-1
-    updateStock({ id: id, stock: newStock})
+    await updateStock({ id: id, stock: newStock})
+    console.log("updated stock")
     const fetchUsers = async()=> {
         try {
             const all = await getAllUsers()
@@ -42,6 +44,7 @@ async function purchaseProduct(e) {
     }
     // await makes sure state is set before it navigates and renders the profile!
     await fetchUsers()
+    console.log("users fetched")
     navigate(`/profile/${loggedInData._id}`)
 }
 

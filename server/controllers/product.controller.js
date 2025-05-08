@@ -3,7 +3,7 @@ import Product from "../models/product.model.js"
 // get all products
 export const getProducts = async(req, res) => {
     try {
-        const products = await Product.find().sort({ timestamp: -1 })
+        const products = await Product.find().sort({ createdAt: -1 })
         res.status(200).json(products)
     } catch (error){ res.status(400).json(error) }
 }

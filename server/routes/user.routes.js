@@ -18,7 +18,7 @@ userRouter.route('/:id')
     .put(updateUser)
 //GET → getUsers (protected by middleware protect): Retrieves users but only for authenticated requests.
 userRouter.route('/')
-    .get( protect, getUsers )
+    .get( getUsers )
     .post( registerUser )
 //
 userRouter.route('/logins')

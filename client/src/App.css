@@ -451,8 +451,7 @@ button {
 
 }
 
-.buy-btn,
-.out-of-stock {
+.buy-btn {
   color: white;
   background-color: rgb(105, 105, 105);
   border: 2px solid rgb(49, 49, 49);
@@ -460,6 +459,17 @@ button {
   padding: 5px;
   width: 200px;
 }
+
+.disable,
+.out-of-stock {
+  color: rgb(79, 79, 79);
+  background-color: rgb(201, 201, 201);
+  border: 2px solid rgb(165, 165, 165);
+  border-radius: 5px;
+  padding: 5px;
+  width: 200px;
+}
+
 
 .buy-btn:hover {
   background-color: rgb(150, 150, 150);

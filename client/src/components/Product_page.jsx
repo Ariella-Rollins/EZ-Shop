@@ -93,7 +93,7 @@ function handleChange(e){
                 <p>{product.description}</p>
                 {    product.stock < 1 ?
                     <button disabled className="out-of-stock" >Out of stock</button>:
-                    <button onClick={()=> {setPopup(true)}} className="buy-btn">Purchase</button>
+                    <button onClick={()=> {setPopup(true)}} disabled={product.creator_id == loggedInData._id} className ={product.creator_id == loggedInData._id? "disable": "buy-btn"}>Purchase</button>
                 }
                 <Link to={`/store/${product.creator_id}`}>Seller's Other Products</Link>
                 <div className="line">

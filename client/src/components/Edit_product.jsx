@@ -68,17 +68,17 @@ export const Edit_product = ({setProducts, products}) => {
                 <h1>Edit Product</h1>
                 <div className="inputs">
                     <div className="input1">
-                        {errors?.name && <p className="errors-product">{errors.name.message}</p>}
+                        {errors?.name && <p className="errors-product">{errors.name}</p>}
                         <input type="text" name="name" id="" placeholder="Product Name" value={data.name} onChange={handleChange}/>
-                        {errors?.price && <p className="errors-product">{errors.price.message}</p>}
+                        {errors?.price && <p className="errors-product">{errors.price}</p>}
                         <input type="number" name="price" id="" placeholder="Price" value={data.price} onChange={handleChange}/>
-                        {errors?.description && <p className="errors-product">{errors.description.message}</p>}
+                        {errors?.description && <p className="errors-product">{errors.description}</p>}
                         <textarea name="description" id="" placeholder="Description" value={data.description} onChange={handleChange}/>
-                        {errors?.stock && <p className="errors-product">{errors.stock.message}</p>}
+                        {errors?.stock && <p className="errors-product">{errors.stock}</p>}
                         <input type="number" name="stock" id="" min="1" max="500" placeholder="Number in stock" value={data.stock} onChange={handleChange}/>
                     </div>
                     <div className="input2">
-                    {errors?.size && <p className="errors-product">{errors.size.message}</p>}
+                    {errors?.size && <p className="errors-product">{errors.size}</p>}
                         <select name="size" value={data.size} onChange={handleChange}>
                             <option value="">Pick a size</option>
                             <option value="extra-small">Extra-small</option>
@@ -87,7 +87,7 @@ export const Edit_product = ({setProducts, products}) => {
                             <option value="large">Large</option>
                             <option value="extra-large">Extra-large</option>
                         </select>
-                        {errors?.color && <p className="errors-product">{errors.color.message}</p>}
+                        {errors?.color && <p className="errors-product">{errors.color}</p>}
                         <select name="color" value={data.color} onChange={handleChange}>
                             <option value="">Pick a color</option>
                             <option value="white">White</option>
@@ -104,7 +104,7 @@ export const Edit_product = ({setProducts, products}) => {
                             <option value="tan">Tan</option>
                             <option value="multi-color">Multi-color</option>
                         </select>
-                        {errors?.category && <p className="errors-product">{errors.category.message}</p>}
+                        {errors?.category && <p className="errors-product">{errors.category}</p>}
                         <select name="category" value={data.category} onChange={handleChange}>
                             <option value="">Pick category</option>
                             <option value="clothes">Clothes</option>
@@ -119,9 +119,9 @@ export const Edit_product = ({setProducts, products}) => {
                             <option value="outdoors">Outdoors</option>
                             <option value="other">Other</option>
                         </select>
-                        {errors?.pic1 && <p className="errors-product">{errors.pic1.message}</p>}
+                        {errors?.pic1 && <p className="errors-product">{errors.pic1}</p>}
                         <input type="text" name="pic1" id="" placeholder="Image url (optional)" value={data.pic1} onChange={handleChange} />
-                        {errors?.pic2 && <p className="errors-product">{errors.pic2.message}</p>}
+                        {errors?.pic2 && <p className="errors-product">{errors.pic2}</p>}
                         <input type="text" name="pic2" id="" placeholder="Second image url (optional)" value={data.pic2} onChange={handleChange} />
                     </div>
                 </div>

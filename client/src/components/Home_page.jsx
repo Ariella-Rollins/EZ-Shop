@@ -74,7 +74,7 @@ export const Home_page = ({products, setProducts, users, setUsers}) => {
             <div className="product" key={index}>
                 <Link to = {`/product/${one._id}`} ><img src={ one.pic1?`${one.pic1}`: '/no-pic.jpg'}  alt="pic" height="150" width="150"></img></Link>
                 <div>
-                    <h2>{one.name}</h2>
+                    <Link to={`/product/${one._id}`}><h2>{one.name}</h2></Link>
                     <p>${one.price}</p>
                     <div className="cmd-btns">
                         <button onClick={()=>{navigate(`/product/${one._id}`)}} className='btn3 view'>View</button>

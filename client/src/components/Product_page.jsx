@@ -4,6 +4,7 @@ import { useLogin } from '../context/userContext'
 import { updateUserHistory } from "../services/user.service"
 import { updateStock } from "../services/product.service"
 import { getAllUsers } from '../services/user.service'
+import { ProductCarousel } from "./carousel"
 
 export const Product_page = ({products, users, setUsers}) => {
 const {id} = useParams()
@@ -73,7 +74,7 @@ function handleChange(e){
                         <input type="number" name="quantity" min="1" max={product.stock} placeholder="1" value={quantity} onChange={handleChange} />
                         <div className="btns">
                             <input type="submit" value="Purchase" />
-                            <button onClick={()=>{ setPopup(false)}}>Cancel</button>
+                            <button type="button" onClick={()=>{ setPopup(false)}}>Cancel</button>
                         </div>
                         </form>
                         </>}
@@ -81,7 +82,11 @@ function handleChange(e){
                     </div>
                 </div>
                 )}
-            <img src={ product.pic1? `${product.pic1}`: '/no-pic.jpg'} width="300"></img>
+                {
+                    !product.pic1? <img src={'/no-pic.jpg'} width="400"></img>:
+                    !product.pic2? <img src={`${product.pic1}`} width="400"></img>:
+                    <ProductCarousel pic1={product.pic1} pic2 ={product.pic2}/>
+                }
             <div className="info">
                 <h1>{product.name}</h1>
                 <p className="bold">${product.price}</p>

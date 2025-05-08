@@ -63,8 +63,8 @@ const handleLogin = e => {
                 <form onSubmit={handleLogin} className='login-form'>
                     {loginErrors&& <p className='errors'>{loginErrors}</p>}
                     <div className="others">
-                        <input type="text" name="email" id="" placeholder='Email Address'/>
-                        <input type="password" name="pw" id="" placeholder='Password'/>
+                        <input type="text" name="email" placeholder='Email Address'/>
+                        <input type="password" name="pw" placeholder='Password'/>
                     </div>
                     <div className="login-btn-space">
                         <input type="submit" value="Login" />
@@ -80,13 +80,13 @@ const handleLogin = e => {
                 {registerErrors?.password && <p className='errors'>{registerErrors.password.message}</p>}
                 {registerErrors?.confirmPassword && <p className='errors'>{registerErrors.confirmPassword.message}</p>}
                 <div className="names">
-                    <input type="text" name="fname" id="" placeholder='First Name'/>
-                    <input type="text" name="lname" id="" placeholder='Last Name'/>
+                    <input type="text" name="fname" placeholder='First Name'/>
+                    <input type="text" name="lname" placeholder='Last Name'/>
                 </div>
                 <div className="others">
-                    <input type="text" name="email" id="" placeholder='Email Address'/>
-                    <input type="password" name="pw" id="" placeholder='Password' />
-                    <input type="password" name="cpw" id="" placeholder='Confirm password' />
+                    <input type="text" name="email" placeholder='Email Address'/>
+                    <input type="password" name="pw" placeholder='Password' />
+                    <input type="password" name="cpw" placeholder='Confirm password' />
                 </div>
                 <div className='login-btn-space'>
                     <input type="submit" value="Sign-up" />
